@@ -6,7 +6,7 @@ import {
   replayIdempotentResponse,
   storeIdempotentResponse,
 } from "@/lib/idempotency";
-import { jobsQueue } from "@/lib/queue";
+import { getJobsQueue } from "@/lib/queue";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import {
   enforceMonthlyCostBudget,
@@ -91,7 +91,7 @@ export async function POST(
       payload: { ratio, clipId: body.clipId },
     })
     .returning();
-  await jobsQueue.add(
+  await getJobsQueue().add(
     "EXPORT",
     { jobId: job.id, videoId, ...job.payload },
     {

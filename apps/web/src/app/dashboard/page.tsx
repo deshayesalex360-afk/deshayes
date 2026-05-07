@@ -1,15 +1,19 @@
 import { desc, eq } from "drizzle-orm";
 import Link from "next/link";
+import { connection } from "next/server";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { logoutAction } from "@/app/actions";
 import { db, schema } from "@/lib/db";
+
+export const dynamic = "force-dynamic";
 
 function monthKey(now = new Date()): string {
   return `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}`;
 }
 
 export default async function DashboardPage() {
+  await connection();
   const session = await auth();
   if (!session?.user?.email) redirect("/");
 

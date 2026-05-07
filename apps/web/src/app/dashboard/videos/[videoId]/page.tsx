@@ -1,13 +1,17 @@
 import { eq } from "drizzle-orm";
+import { connection } from "next/server";
 import { notFound } from "next/navigation";
 import { db, schema } from "@/lib/db";
 import { ClipEditor } from "./ui";
+
+export const dynamic = "force-dynamic";
 
 export default async function VideoDetailPage({
   params,
 }: {
   params: Promise<{ videoId: string }>;
 }) {
+  await connection();
   const { videoId } = await params;
   const video = await db.query.videos.findFirst({
     where: eq(schema.videos.id, videoId),

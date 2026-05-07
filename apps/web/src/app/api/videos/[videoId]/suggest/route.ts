@@ -6,7 +6,7 @@ import {
   replayIdempotentResponse,
   storeIdempotentResponse,
 } from "@/lib/idempotency";
-import { jobsQueue } from "@/lib/queue";
+import { getJobsQueue } from "@/lib/queue";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import {
   enforceMonthlyCostBudget,
@@ -85,7 +85,7 @@ export async function POST(
     .insert(schema.jobs)
     .values({ videoId, type: "SUGGEST_CLIPS" })
     .returning();
-  await jobsQueue.add(
+  await getJobsQueue().add(
     "SUGGEST_CLIPS",
     { jobId: job.id, videoId },
     {
