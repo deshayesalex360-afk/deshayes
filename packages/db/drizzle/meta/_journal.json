@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1778153090159,
+      "tag": "0000_flaky_moira_mactaggert",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1778156687655,
+      "tag": "0001_eminent_phalanx",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1778157325377,
+      "tag": "0002_black_terror",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1778157590791,
+      "tag": "0003_icy_salo",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1778157800665,
+      "tag": "0004_flowery_sentry",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1778157992930,
+      "tag": "0005_chubby_phalanx",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1778158371332,
+      "tag": "0006_adorable_nick_fury",
+      "breakpoints": true
+    }
+  ]
+}

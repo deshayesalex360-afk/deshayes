@@ -1,0 +1,27 @@
+{
+  "name": "vizard-clone-mvp",
+  "version": "1.0.0",
+  "description": "Vizard-like SaaS MVP+ monorepo",
+  "scripts": {
+    "test": "echo \"No tests configured at root\"",
+    "dev": "dotenv -e .env -- npm run dev -w web",
+    "build": "dotenv -e .env -- npm run build -w web",
+    "lint": "npm run lint -w web",
+    "worker": "dotenv -e .env -- npm run dev -w @vizard/worker",
+    "db:generate": "dotenv -e .env -- npm run db:generate -w @vizard/db",
+    "db:migrate": "dotenv -e .env -- npm run db:migrate -w @vizard/db",
+    "preprod:audit": "dotenv -e .env -- node scripts/preprod-audit.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "dotenv-cli": "^11.0.0"
+  }
+}
